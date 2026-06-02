@@ -45,7 +45,8 @@ while (true)
 
             cari_stand.UbahStatus();
 
-            Console.WriteLine($"Total pembayaran sewa: Rp {total_sewa}");
+            Console.WriteLine($"\nTotal Biaya: Rp {total_sewa}");
+            Console.WriteLine($"Stand {cari_stand.NamaStand} berhasil disewakan selama {hari} hari");
         }
         else
         {
@@ -64,12 +65,13 @@ while (true)
         }
         else if (!cari_stand.IsAvailable)
         {
+            Console.WriteLine($"Stand ditemukan: {cari_stand.NamaStand} | Rp {cari_stand.HargaSewaPerHari} / hari");
             cari_stand.UbahStatus();
-            Console.WriteLine("\nSewa stand berhasil diakhiri");
+            Console.WriteLine($"\nSewa stand {cari_stand.NamaStand} berhasil diakhiri");
         }
         else
         {
-            Console.WriteLine("\nProses pengembalian tidak bisa dilakukan");
+            Console.WriteLine("\nStand belum disewa, proses pengembalian tidak bisa dilakukan.");
         }
     }
     else if (pilihan == "3")
