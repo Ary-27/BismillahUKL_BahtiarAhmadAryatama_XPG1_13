@@ -106,7 +106,12 @@ class Stand
     public string NamaStand
     {
         get { return _namaStand; }
-        set { _namaStand = value; }
+        set
+        {
+            if (!string.IsNullOrWhiteSpace(value))
+                _namaStand = value;
+            throw new ArgumentException("Nama stand tidak boleh kosong.");
+        }
     }
 
     public double HargaSewaPerHari
