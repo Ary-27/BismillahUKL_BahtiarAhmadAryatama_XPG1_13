@@ -58,12 +58,11 @@ while (true)
         string namaStand = Console.ReadLine();
 
         var cari_stand = data_stand.FirstOrDefault(cs => string.Equals(namaStand, cs.NamaStand, StringComparison.OrdinalIgnoreCase));
-
         if (cari_stand == null)
         {
-            Console.WriteLine("\nStand tidak ditemukan");
+        Console.WriteLine("\nStand tidak ditemukan");
         }
-        else if (cari_stand.IsAvailable)
+        else if (!cari_stand.IsAvailable)
         {
             cari_stand.UbahStatus();
             Console.WriteLine("\nSewa stand berhasil diakhiri");
