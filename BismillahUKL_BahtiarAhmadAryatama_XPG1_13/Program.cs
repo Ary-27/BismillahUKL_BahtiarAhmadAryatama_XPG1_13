@@ -158,3 +158,21 @@ class StandOutdoor : Stand
         return base.HitungTotal(jumlahHari) + (_biayaTenda * jumlahHari);
     }
 }
+
+// CLASS INDOOR
+class StandIndoor : Stand
+{
+    private double _biayaListrik;
+    public StandIndoor(string namaStand, double hargaSewaPerHari) : base(namaStand, hargaSewaPerHari)
+    {
+        _biayaListrik = 100000;
+    }
+    public double BiayaListrik
+    {
+        get { return _biayaListrik; }
+    }
+    public override double HitungTotal(int jumlahHari)
+    {
+        return base.HitungTotal(jumlahHari) + (_biayaListrik * jumlahHari);
+    }
+}
